@@ -1,0 +1,16 @@
+goto_frame:
+    - action: frame|0
+email:
+    - by: name
+      locator: email
+      action: sendkeys
+      input: ${email}
+password:
+    - by: name
+      locator: password
+      action: sendkeys
+      input:  ${password}
+login_element:
+    - by: id
+      locator: dologin
+      action: click
