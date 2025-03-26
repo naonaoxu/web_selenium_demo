@@ -82,36 +82,4 @@ def pytest_runtest_makereport(item, call):
         print(res.__dict__)
     res.description = str(item.function.__doc__)
 
-'''
-driver = None
-
-@pytest.mark.hookwrapper
-def pytest_runtest_makereport(item):
-    pytest_html = item.config.pluginmanager.getplugin('html')
-    outcome = yield
-    report = outcome.get_result()
-    extra = getattr(report, 'extra', [])
-
-    if report.when == 'call' or report.when == "setup":
-        xfail = hasattr(report, 'wasxfail')
-        if (report.skipped and xfail) or (report.failed and not xfail):
-            file_name = report.nodeid.replace("::", "_") + ".png"
-            screen_img = _capture_screenshot()
-            if file_name:
-                html = '<div><img src="data:image/png;base64,%s" alt="screenshot" style="width:600px;height:300px;" ' \
-                       'οnclick="window.open(this.src)" align="right"/></div>' % screen_img
-                extra.append(pytest_html.extras.html(html))
-        report.extra = extra
-
-@pytest.fixture(scope='session', autouse=True)
-def browser(getBrowser):
-    global driver
-    if driver is None:
-        if getBrowser == "chrome":
-            driver = webdriver.Chrome()
-    return driver
-
-def _capture_screenshot():
-    return driver.get_screenshot_as_base64()
-'''
 
