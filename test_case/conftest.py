@@ -3,6 +3,8 @@ from time import strftime
 from py.xml import html
 from selenium import webdriver
 
+from utils import project
+
 send_browser=' '
 send_url=' '
 
@@ -29,8 +31,10 @@ def pytest_html_report_title(report):
 def pytest_metadata(metadata:dict):    #change metadata
     metadata.pop("Packages")
     metadata.pop("Plugins")
-    metadata['Browser']="TBD"
-    metadata['URL'] = "TBD"
+ #   metadata['Browser'] = project.getBrowser_()
+    metadata['Browser']=project.getBrowser_()['Browser'][0]
+    metadata['URL'] = "".join(project.getBrowser_()['URL'])
+
 '''
 def pytest_configure(config):
     config._metadata.clear()
