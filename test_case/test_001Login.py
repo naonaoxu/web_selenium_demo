@@ -14,7 +14,7 @@ class Test_login:
 
     @pytest.mark.parametrize('senario,data,validate',PraseYaml.get_yaml_data("../test_data/test_001Login.yaml", 'case1'),
                 ids=[case[0] for case in PraseYaml.get_yaml_data("../test_data/test_001Login.yaml", 'case1')])
-    def test_login_Email(self, senario, data, validate):
+    def test_login(self, senario, data, validate):
         '''Test Login Function'''
         self.browser.Log.info(f"***Start test Senario:{senario}")
         email= data['data']['email']

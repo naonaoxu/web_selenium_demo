@@ -1,14 +1,12 @@
 import pytest
 from time import strftime
-import pytest_html
 from py.xml import html
 from selenium import webdriver
 
 send_browser=' '
 send_url=' '
 
-
-def pytest_addoption(parser):
+def pytest_addoption(parser):#browser/url copuld input as params
     parser.addoption("--browser",action="store",default = "chrome",help="serial of the mode")
     parser.addoption("--url", action="store", default="https://www.126.com", help="serial of the mode")
 
@@ -25,10 +23,10 @@ def getUrl(request):
     return send_url
 
 def pytest_html_report_title(report):
-    report.title = "Demo of Web Automation Test"
+    report.title = "Demo of Web Automation Test" #define report title
 
 @pytest.hookimpl(optionalhook=True)
-def pytest_metadata(metadata:dict):
+def pytest_metadata(metadata:dict):    #change metadata
     metadata.pop("Packages")
     metadata.pop("Plugins")
     metadata['Browser']="TBD"
@@ -40,39 +38,40 @@ def pytest_configure(config):
     config._metadata['WebBrowser'] = "Chrome"
     config._metadata["selenium"] = "4.7.0"
     
-@pytest.hookimpl(tryfirst=True)
-def pytest_sessionfinish(session, exitstatus):
-    session.config._metadata["其他环境"] = "联网环境"    
 '''
 
-def pytest_html_results_summary(prefix, summary, postfix):
-    prefix.clear()  # 清空summary中的内容
+def pytest_html_results_summary(prefix):     #change summay
+    prefix.clear()  # clear summary
     prefix.extend([html.p("Author: MS.Xu")])
 
-def pytest_html_results_table_header(cells):
+def pytest_html_results_table_header(cells):      #change table
+    cells.pop(1)
+    cells.pop(-1)
+    cells.insert(1, html.th("TestCases", col="test"))
     cells.insert(3,html.th("Description",col="desc"))
     cells.insert(4, html.th("Time", class_="sortable time", col="time"))
-    cells.pop()
 
-def pytest_html_results_table_row(report,cells):
-    cells.insert(3,html.td(report.description))
+def pytest_html_results_table_row(report,cells):   #detail in table
+    cells.pop(1)
+    cells.pop(-1)
+    cells.insert(3, html.td(report.description))
     cells.insert(4, html.td(strftime('%Y-%m-%d %H:%M:%S'), class_='col-time'))
-    cells.pop()
+    cells.insert(1, html.th(report.__dict__['nodeid'].split('::')[0][5:-8]+report.__dict__['nodeid'].split('::')[-1][5:]))
 
-@pytest.mark.hookwrapper
-@pytest.hookimpl(hookwrapper=True)
-def pytest_runtest_makereport(item,call):
-    outcome = yield
-    report = outcome.get_result()
-    setattr(report,'duration_formatter',"%H:%M:%S.%f")
-    report.description = str(item.function.__doc__)
+#@pytest.mark.hookwrapper
+#@pytest.hookimpl(hookwrapper=True)
+#def pytest_runtest_makereport(item):
+#    outcome = yield
+#    report = outcome.get_result()
+#    setattr(report,'duration_formatter',"%H:%M:%S.%f")
+#    report.description = str(item.function.__doc__)
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    out = yield  # 钩子函数
-    res = out.get_result()  # 获取用例执行结果
+    out = yield
+    res = out.get_result()  # Get result of testcase
     print(res)
-    if res.when == "call":  # 只获取call用例失败时的信息
+    if res.when == "call":
         print("item：{}".format(item))
         print("CaseDescription：{}".format(item.function.__doc__))
         print("Exception：{}".format(call.excinfo))
@@ -80,6 +79,7 @@ def pytest_runtest_makereport(item, call):
         print("TestResult：{}".format(res.outcome))
         print("Duration：{}".format(res.duration))
         print(res.__dict__)
+        print(f"****{res.__dict__['nodeid'].split('::')[0]}:{res.__dict__['nodeid'].split('::')[-1]}")
     res.description = str(item.function.__doc__)
 
 

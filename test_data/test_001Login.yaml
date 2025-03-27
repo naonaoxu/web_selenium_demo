@@ -1,6 +1,6 @@
 case1:
   -
-    - "1:email:empty email"
+    - "1:empty email"
     - data:
         email: "  "
         password: password
@@ -9,7 +9,7 @@ case1:
         locator: //*[@class='ferrorhead']
         action: text|equal|账号格式错误
   -
-    - "2:email:contains special charactor"
+    - "2:contains special charactor"
     - data:
         email: test((((001
         password: password
@@ -18,7 +18,7 @@ case1:
         locator: //*[@class='ferrorhead']
         action: text|equal|账号格式错误
   -
-    - "3:email:not exist email address"
+    - "3:not exist email address"
     - data:
         email: test001hotmail.com
         password: password
@@ -27,7 +27,7 @@ case1:
         locator: //*[@class='ferrorhead']
         action: text|equal|账号或密码错误
   -
-    - "4:email:Login success"
+    - "4:Login success"
     - data:
         email: fortest007
         password: Aa123456

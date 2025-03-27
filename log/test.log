@@ -1,48 +1,48 @@
-2025-03-26 14:46:25,487 10968 browser.py[line:38] - INFO: ***************Start open chrome,url:https://www.126.com
-2025-03-26 14:46:31,913 10968 test_001Login.py[line:19] - INFO: ***Start test Senario:1:email:empty email
-2025-03-26 14:46:32,018 10968 prase_yaml.py[line:54] - INFO: Yaml goto_frame.data is [{'action': 'frame|0'}]
-2025-03-26 14:46:32,032 10968 prase_yaml.py[line:54] - INFO: Yaml email.data is [{'by': 'name', 'locator': 'email', 'action': 'sendkeys', 'input': '${email}'}]
-2025-03-26 14:46:32,077 10968 base_.py[line:69] - INFO: SendKeys name:email successful
-2025-03-26 14:46:32,082 10968 prase_yaml.py[line:54] - INFO: Yaml password.data is [{'by': 'name', 'locator': 'password', 'action': 'sendkeys', 'input': '${password}'}]
-2025-03-26 14:46:32,169 10968 base_.py[line:69] - INFO: SendKeys name:password successful
-2025-03-26 14:46:32,176 10968 prase_yaml.py[line:54] - INFO: Yaml login_element.data is [{'by': 'id', 'locator': 'dologin', 'action': 'click'}]
-2025-03-26 14:46:32,292 10968 base_.py[line:47] - INFO: Click id:dologin successful
-2025-03-26 14:46:36,300 10968 base_.py[line:111] - INFO: Start Verify yaml:{'by': 'xpath', 'locator': "//*[@class='ferrorhead']", 'action': 'text|equal|账号格式错误'}
-2025-03-26 14:46:36,324 10968 base_.py[line:78] - INFO: get_text xpath://*[@class='ferrorhead'] successful
-2025-03-26 14:46:38,589 10968 browser.py[line:49] - INFO: ***************Start close webBrower
-2025-03-26 14:46:40,541 10968 browser.py[line:38] - INFO: ***************Start open chrome,url:https://www.126.com
-2025-03-26 14:46:42,283 10968 test_001Login.py[line:19] - INFO: ***Start test Senario:2:email:contains special charactor
-2025-03-26 14:46:42,296 10968 prase_yaml.py[line:54] - INFO: Yaml goto_frame.data is [{'action': 'frame|0'}]
-2025-03-26 14:46:42,518 10968 prase_yaml.py[line:54] - INFO: Yaml email.data is [{'by': 'name', 'locator': 'email', 'action': 'sendkeys', 'input': '${email}'}]
-2025-03-26 14:46:42,597 10968 base_.py[line:69] - INFO: SendKeys name:email successful
-2025-03-26 14:46:42,605 10968 prase_yaml.py[line:54] - INFO: Yaml password.data is [{'by': 'name', 'locator': 'password', 'action': 'sendkeys', 'input': '${password}'}]
-2025-03-26 14:46:42,713 10968 base_.py[line:69] - INFO: SendKeys name:password successful
-2025-03-26 14:46:42,722 10968 prase_yaml.py[line:54] - INFO: Yaml login_element.data is [{'by': 'id', 'locator': 'dologin', 'action': 'click'}]
-2025-03-26 14:46:42,903 10968 base_.py[line:47] - INFO: Click id:dologin successful
-2025-03-26 14:46:46,914 10968 base_.py[line:111] - INFO: Start Verify yaml:{'by': 'xpath', 'locator': "//*[@class='ferrorhead']", 'action': 'text|equal|账号格式错误'}
-2025-03-26 14:46:46,937 10968 base_.py[line:78] - INFO: get_text xpath://*[@class='ferrorhead'] successful
-2025-03-26 14:46:49,246 10968 browser.py[line:49] - INFO: ***************Start close webBrower
-2025-03-26 14:46:51,184 10968 browser.py[line:38] - INFO: ***************Start open chrome,url:https://www.126.com
-2025-03-26 14:46:53,711 10968 test_001Login.py[line:19] - INFO: ***Start test Senario:3:email:not exist email address
-2025-03-26 14:46:53,725 10968 prase_yaml.py[line:54] - INFO: Yaml goto_frame.data is [{'action': 'frame|0'}]
-2025-03-26 14:46:53,930 10968 prase_yaml.py[line:54] - INFO: Yaml email.data is [{'by': 'name', 'locator': 'email', 'action': 'sendkeys', 'input': '${email}'}]
-2025-03-26 14:46:54,029 10968 base_.py[line:69] - INFO: SendKeys name:email successful
-2025-03-26 14:46:54,038 10968 prase_yaml.py[line:54] - INFO: Yaml password.data is [{'by': 'name', 'locator': 'password', 'action': 'sendkeys', 'input': '${password}'}]
-2025-03-26 14:46:54,166 10968 base_.py[line:69] - INFO: SendKeys name:password successful
-2025-03-26 14:46:54,177 10968 prase_yaml.py[line:54] - INFO: Yaml login_element.data is [{'by': 'id', 'locator': 'dologin', 'action': 'click'}]
-2025-03-26 14:46:54,375 10968 base_.py[line:47] - INFO: Click id:dologin successful
-2025-03-26 14:46:58,387 10968 base_.py[line:111] - INFO: Start Verify yaml:{'by': 'xpath', 'locator': "//*[@class='ferrorhead']", 'action': 'text|equal|账号或密码错误'}
-2025-03-26 14:46:58,410 10968 base_.py[line:78] - INFO: get_text xpath://*[@class='ferrorhead'] successful
-2025-03-26 14:47:00,710 10968 browser.py[line:49] - INFO: ***************Start close webBrower
-2025-03-26 14:47:02,638 10968 browser.py[line:38] - INFO: ***************Start open chrome,url:https://www.126.com
-2025-03-26 14:47:05,152 10968 test_001Login.py[line:19] - INFO: ***Start test Senario:4:email:Login success
-2025-03-26 14:47:05,165 10968 prase_yaml.py[line:54] - INFO: Yaml goto_frame.data is [{'action': 'frame|0'}]
-2025-03-26 14:47:05,326 10968 prase_yaml.py[line:54] - INFO: Yaml email.data is [{'by': 'name', 'locator': 'email', 'action': 'sendkeys', 'input': '${email}'}]
-2025-03-26 14:47:05,408 10968 base_.py[line:69] - INFO: SendKeys name:email successful
-2025-03-26 14:47:05,416 10968 prase_yaml.py[line:54] - INFO: Yaml password.data is [{'by': 'name', 'locator': 'password', 'action': 'sendkeys', 'input': '${password}'}]
-2025-03-26 14:47:05,510 10968 base_.py[line:69] - INFO: SendKeys name:password successful
-2025-03-26 14:47:05,518 10968 prase_yaml.py[line:54] - INFO: Yaml login_element.data is [{'by': 'id', 'locator': 'dologin', 'action': 'click'}]
-2025-03-26 14:47:05,703 10968 base_.py[line:47] - INFO: Click id:dologin successful
-2025-03-26 14:47:12,588 10968 base_.py[line:111] - INFO: Start Verify yaml:{'by': 'xpath', 'locator': "//*[@id='dvNavTree']//*[@title='收件箱']", 'action': 'text|equal|收件箱'}
-2025-03-26 14:47:12,612 10968 base_.py[line:78] - INFO: get_text xpath://*[@id='dvNavTree']//*[@title='收件箱'] successful
-2025-03-26 14:47:14,928 10968 browser.py[line:49] - INFO: ***************Start close webBrower
+2025-03-27 08:55:09,493 41888 browser.py[line:38] - INFO: ***************Start open chrome,url:https://www.126.com
+2025-03-27 08:55:16,419 41888 test_001Login.py[line:19] - INFO: ***Start test Senario:1:empty email
+2025-03-27 08:55:16,873 41888 prase_yaml.py[line:54] - INFO: Yaml goto_frame.data is [{'action': 'frame|0'}]
+2025-03-27 08:55:16,969 41888 prase_yaml.py[line:54] - INFO: Yaml email.data is [{'by': 'name', 'locator': 'email', 'action': 'sendkeys', 'input': '${email}'}]
+2025-03-27 08:55:17,218 41888 base_.py[line:67] - INFO: SendKeys name:email successful
+2025-03-27 08:55:17,263 41888 prase_yaml.py[line:54] - INFO: Yaml password.data is [{'by': 'name', 'locator': 'password', 'action': 'sendkeys', 'input': '${password}'}]
+2025-03-27 08:55:17,574 41888 base_.py[line:67] - INFO: SendKeys name:password successful
+2025-03-27 08:55:17,608 41888 prase_yaml.py[line:54] - INFO: Yaml login_element.data is [{'by': 'id', 'locator': 'dologin', 'action': 'click'}]
+2025-03-27 08:55:18,053 41888 base_.py[line:45] - INFO: Click id:dologin successful
+2025-03-27 08:55:22,141 41888 base_.py[line:109] - INFO: Start Verify yaml:{'by': 'xpath', 'locator': "//*[@class='ferrorhead']", 'action': 'text|equal|账号格式错误'}
+2025-03-27 08:55:22,249 41888 base_.py[line:76] - INFO: get_text xpath://*[@class='ferrorhead'] successful
+2025-03-27 08:55:24,836 41888 browser.py[line:49] - INFO: ***************Start close webBrower
+2025-03-27 08:55:28,439 41888 browser.py[line:38] - INFO: ***************Start open chrome,url:https://www.126.com
+2025-03-27 08:55:31,614 41888 test_001Login.py[line:19] - INFO: ***Start test Senario:2:contains special charactor
+2025-03-27 08:55:31,647 41888 prase_yaml.py[line:54] - INFO: Yaml goto_frame.data is [{'action': 'frame|0'}]
+2025-03-27 08:55:31,823 41888 prase_yaml.py[line:54] - INFO: Yaml email.data is [{'by': 'name', 'locator': 'email', 'action': 'sendkeys', 'input': '${email}'}]
+2025-03-27 08:55:32,123 41888 base_.py[line:67] - INFO: SendKeys name:email successful
+2025-03-27 08:55:32,138 41888 prase_yaml.py[line:54] - INFO: Yaml password.data is [{'by': 'name', 'locator': 'password', 'action': 'sendkeys', 'input': '${password}'}]
+2025-03-27 08:55:32,339 41888 base_.py[line:67] - INFO: SendKeys name:password successful
+2025-03-27 08:55:32,356 41888 prase_yaml.py[line:54] - INFO: Yaml login_element.data is [{'by': 'id', 'locator': 'dologin', 'action': 'click'}]
+2025-03-27 08:55:32,635 41888 base_.py[line:45] - INFO: Click id:dologin successful
+2025-03-27 08:55:36,652 41888 base_.py[line:109] - INFO: Start Verify yaml:{'by': 'xpath', 'locator': "//*[@class='ferrorhead']", 'action': 'text|equal|账号格式错误'}
+2025-03-27 08:55:36,722 41888 base_.py[line:76] - INFO: get_text xpath://*[@class='ferrorhead'] successful
+2025-03-27 08:55:39,226 41888 browser.py[line:49] - INFO: ***************Start close webBrower
+2025-03-27 08:55:43,182 41888 browser.py[line:38] - INFO: ***************Start open chrome,url:https://www.126.com
+2025-03-27 08:55:45,552 41888 test_001Login.py[line:19] - INFO: ***Start test Senario:3:not exist email address
+2025-03-27 08:55:45,577 41888 prase_yaml.py[line:54] - INFO: Yaml goto_frame.data is [{'action': 'frame|0'}]
+2025-03-27 08:55:45,885 41888 prase_yaml.py[line:54] - INFO: Yaml email.data is [{'by': 'name', 'locator': 'email', 'action': 'sendkeys', 'input': '${email}'}]
+2025-03-27 08:55:46,029 41888 base_.py[line:67] - INFO: SendKeys name:email successful
+2025-03-27 08:55:46,044 41888 prase_yaml.py[line:54] - INFO: Yaml password.data is [{'by': 'name', 'locator': 'password', 'action': 'sendkeys', 'input': '${password}'}]
+2025-03-27 08:55:46,195 41888 base_.py[line:67] - INFO: SendKeys name:password successful
+2025-03-27 08:55:46,212 41888 prase_yaml.py[line:54] - INFO: Yaml login_element.data is [{'by': 'id', 'locator': 'dologin', 'action': 'click'}]
+2025-03-27 08:55:46,511 41888 base_.py[line:45] - INFO: Click id:dologin successful
+2025-03-27 08:55:50,547 41888 base_.py[line:109] - INFO: Start Verify yaml:{'by': 'xpath', 'locator': "//*[@class='ferrorhead']", 'action': 'text|equal|账号或密码错误'}
+2025-03-27 08:55:50,593 41888 base_.py[line:76] - INFO: get_text xpath://*[@class='ferrorhead'] successful
+2025-03-27 08:55:53,102 41888 browser.py[line:49] - INFO: ***************Start close webBrower
+2025-03-27 08:55:57,550 41888 browser.py[line:38] - INFO: ***************Start open chrome,url:https://www.126.com
+2025-03-27 08:55:59,433 41888 test_001Login.py[line:19] - INFO: ***Start test Senario:4:Login success
+2025-03-27 08:55:59,441 41888 prase_yaml.py[line:54] - INFO: Yaml goto_frame.data is [{'action': 'frame|0'}]
+2025-03-27 08:55:59,656 41888 prase_yaml.py[line:54] - INFO: Yaml email.data is [{'by': 'name', 'locator': 'email', 'action': 'sendkeys', 'input': '${email}'}]
+2025-03-27 08:55:59,710 41888 base_.py[line:67] - INFO: SendKeys name:email successful
+2025-03-27 08:55:59,717 41888 prase_yaml.py[line:54] - INFO: Yaml password.data is [{'by': 'name', 'locator': 'password', 'action': 'sendkeys', 'input': '${password}'}]
+2025-03-27 08:55:59,800 41888 base_.py[line:67] - INFO: SendKeys name:password successful
+2025-03-27 08:55:59,807 41888 prase_yaml.py[line:54] - INFO: Yaml login_element.data is [{'by': 'id', 'locator': 'dologin', 'action': 'click'}]
+2025-03-27 08:55:59,948 41888 base_.py[line:45] - INFO: Click id:dologin successful
+2025-03-27 08:56:06,894 41888 base_.py[line:109] - INFO: Start Verify yaml:{'by': 'xpath', 'locator': "//*[@id='dvNavTree']//*[@title='收件箱']", 'action': 'text|equal|收件箱'}
+2025-03-27 08:56:06,919 41888 base_.py[line:76] - INFO: get_text xpath://*[@id='dvNavTree']//*[@title='收件箱'] successful
+2025-03-27 08:56:09,269 41888 browser.py[line:49] - INFO: ***************Start close webBrower
