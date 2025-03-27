@@ -1,8 +1,10 @@
 #encoding=utf-8
+import allure
 import pytest
 from base.browser import Browser
 from utils.prase_yaml import PraseYaml
 
+@allure.feature("Test Login")
 class Test_login:
 
     @pytest.fixture(scope="function",autouse=True)
@@ -12,6 +14,8 @@ class Test_login:
         yield
         self.browser.quit_driver()
 
+    @allure.story("Story:Login function")
+    @allure.title('{senario}')
     @pytest.mark.parametrize('senario,data,validate',PraseYaml.get_yaml_data("../test_data/test_001Login.yaml", 'case1'),
                 ids=[case[0] for case in PraseYaml.get_yaml_data("../test_data/test_001Login.yaml", 'case1')])
     def test_login(self, senario, data, validate):

@@ -1,6 +1,8 @@
 #encoding=utf-8
 import json
 import time
+
+import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -111,6 +113,10 @@ class Base:
             action = validate["action"]
             if action.split("|")[0] == "text" and action.split("|")[1] == "equal":
                 actual_text = self.base_get_text(validate["by"], validate["locator"])
+                self._driver.get_screenshot_as_file("temp.PNG")
+                with open("temp.PNG","rb") as f:
+                    content = f.read()
+                    allure.attach(content,name=validate["action"],attachment_type=allure.attachment_type.PNG)
                 if actual_text == action.split("|")[-1]:
                     result = True
                 else:
@@ -118,6 +124,7 @@ class Base:
                     self.Log.info(f"!!!!!!!{actual_text}")
         return result
 
+'''
     def run_verify(self,validate):
         self.Log.info(f"Start Verify yaml:{validate}")
         if "by" in validate.keys():
@@ -137,16 +144,16 @@ class Base:
                             else:
                                 self.Log.error(f"A:Fail:actual ！= verify,actual:{actual_text},expect:{verify_data}")
                                 return False
-#                        elif verify_word == "tbd":
-#                            pass
-#                        else:
-#                            pass
-#                elif action == "tbd":
-#                    pass
-#                else:
-#                    pass
+                        elif verify_word == "tbd":
+                            pass
+                        else:
+                            pass
+                elif action == "tbd":
+                    pass
+                else:
+                    pass
 
-'''
+
     def steps(self,file_path,*krgs):
         steps = PraseYaml.get_yaml_data(file_path,*krgs)
         element = None

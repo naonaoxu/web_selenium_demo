@@ -28,7 +28,7 @@ def set_report_name(allure_html_path, new_name):
     with open(title_filepath, 'w', encoding="utf-8") as f:
         json.dump(new_params, f, ensure_ascii=False, indent=4)
 
-def getBrowser_():
+def get_():
     with open('..//environment.properties','r') as f:
         lines=f.readlines()
         result_dict={}
@@ -36,10 +36,11 @@ def getBrowser_():
             key= line.strip().split(':')[0]
             value= line.strip().split(':')[1:]
             result_dict[key] = value
+        return result_dict
 
 if __name__ == '__main__':
     print(project_path)
-    getBrowser_()
+    get_()
 
 
 

@@ -32,8 +32,8 @@ def pytest_metadata(metadata:dict):    #change metadata
     metadata.pop("Packages")
     metadata.pop("Plugins")
  #   metadata['Browser'] = project.getBrowser_()
-    metadata['Browser']=project.getBrowser_()['Browser'][0]
-    metadata['URL'] = "".join(project.getBrowser_()['URL'])
+    metadata['Browser']="".join(project.get_()['Browser'])
+    metadata['URL'] = "".join(project.get_()['URL'])
 
 '''
 def pytest_configure(config):
